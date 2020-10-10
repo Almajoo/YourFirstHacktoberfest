@@ -9,36 +9,30 @@
 
 // Write your program here!
 // this program concatenates two string in c without the use of strcat
+//solved by Almajoo
 
-#include <stdio.h>
-
-void main(void){
- 
-    // variable declaration
-    char string_one[100], string_two[100], accumulated_string[200];
-    int i, j, length = 0;
-
-    // asking the user for the two strings
-    printf("String one: ");
-        scanf("%s", &string_one);
-    printf("String two: ");
-        scanf("%s", &string_two);
-
-    // finding the "actual" length of string_one
-    for(i = 0 ; i<100 ; i++){
-        accumulated_string[i] = string_one[i]; // copying "string_one" in "accumulated_string"
-        if(string_one[i] == '\0')
-            break;
-        length++;
-    }
-
-    // appending the string_two with string_one, after the last character of string_one flagged by "length"
-    for(j = 0 ; j<100 ; j++){
-        accumulated_string[length] = string_two[j];
-        if(string_two[j] == '\0')
-            break;
-        length++;
-    }
-
-    printf("\nThe concatenated string is %s", accumulated_string);
+#include<stdio.h>
+#define MAX 100
+#define IMAX 100
+void main()
+{
+char s1[MAX],s2[MAX],s3[IMAX];
+int i=0,j=0; 
+printf("Enter the String 1:");
+gets(s1);
+printf("Enter the String2: "); 
+gets(s2);
+while(s1[i] != '\0')
+{
+    s3[i]=s1[i];  // copying string_one in s3
+    i++;
+}
+while(s2[j] != '\0')
+{
+    s3[i]=s2[j];  // copying string_two in s3
+    i++;
+    j++;
+}
+s3[i]='\0';   // adding end point
+printf("Concatenated String = %s",s3);
 }
